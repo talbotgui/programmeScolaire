@@ -1,0 +1,21 @@
+<div id="page">
+	<div id="entete">
+		<div id="entete-logo">
+			<img src="./assets/images/logo.png" alt="logo" (click)="rechargerPage()" />
+		</div>
+		<div id="entete-titre">
+			<h1>Programme scolaire 2017 - 2018</h1>
+		</div>
+	</div>
+
+	<div id="menu">
+		<nav md-tab-nav-bar>
+			<a md-tab-link routerLink="/tab-competence-route" class="navCompetence" routerLinkActive="active">Compétences</a>
+			<a md-tab-link routerLink="/tab-aide-route" class="navAide" routerLinkActive="active">Aide</a>
+		</nav>
+	</div>
+
+	<div id="contenu">
+		<router-outlet></router-outlet>
+	</div>
+</div>

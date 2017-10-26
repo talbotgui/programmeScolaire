@@ -1,0 +1,31 @@
+<fieldset>
+    <legend>Selection des données : </legend>
+    <md-checkbox [value]="cyclesSelectionnes.indexOf(2) !== -1" (click)="chargeOuDecharge(2)">Cycle2</md-checkbox>
+    <md-checkbox [value]="cyclesSelectionnes.indexOf(3) !== -1" (click)="chargeOuDecharge(3)">Cycle3</md-checkbox>
+    <md-checkbox [value]="cyclesSelectionnes.indexOf(4) !== -1" (click)="chargeOuDecharge(4)">Cycle4</md-checkbox>
+</fieldset>
+
+<fieldset *ngIf="noeuds && noeuds.length > 0">
+    <legend>Filtre : </legend>
+    <input [(ngModel)]="filtre" (change)="recherche()" />
+</fieldset>
+
+<br/>
+
+<fieldset *ngIf="noeudSelectionne">
+    <legend>Compétence sélectionnée : </legend>
+    {{noeudSelectionne.data.libelleComplet}}
+</fieldset>
+
+<br/>
+
+
+<!-- https://github.com/500tech/angular-tree-component -->
+<tree-root [nodes]="noeuds" *ngIf="noeuds && noeuds.length > 0">
+    <ng-template #treeNodeTemplate let-node let-index="index">
+        <div>
+            <span class="level{{node.level}}">{{node.level}}</span>&nbsp;
+            <span id="competence{{index}}" (click)="selectionneNoeud(node)">{{ node.data.name }}</span>
+        </div>
+    </ng-template>
+</tree-root>
