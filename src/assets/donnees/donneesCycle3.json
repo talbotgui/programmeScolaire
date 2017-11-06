@@ -363,7 +363,7 @@
                   {
                     "id": "j1_99",
                     "idParent": "j1_96",
-                    "name": "Orthographier correctement un texte simple de dix lignes (rédaction ou dictée) en se référant aux règles connues d'ortographe et de grammaire ainsi qu'à la connaissance du vocabulaire",
+                    "name": "Orthographier correctement un texte simple de dix lignes (rédaction ou dictée) en se référant aux règles connues d'orthographe et de grammaire ainsi qu'à la connaissance du vocabulaire",
                     "children": []
                   }
                 ]
@@ -373,7 +373,7 @@
           {
             "id": "JF1",
             "idParent": "niveau2",
-            "name": "Langues vivantes (ÉTRANGÈRES OU RÉGIONALES)",
+            "name": "Langues vivantes (étrangères ou régionales)",
             "children": [
               {
                 "id": "JF11",
@@ -742,7 +742,7 @@
           {
             "id": "JF2",
             "idParent": "niveau2",
-            "name": "ARTS PLASTIQUES",
+            "name": "Arts plastiques",
             "children": [
               {
                 "id": "JF21",
@@ -1304,176 +1304,175 @@
                     "id": "JF511",
                     "idParent": "JF51",
                     "name": "Combiner des actions simples : courir-lancer ; courir-sauter.",
-                    "children": [
-                      {
-                        "id": "JF5111",
-                        "idParent": "JF511",
-                        "name": "Mobiliser ses ressources pour réaliser la meilleure performance possible dans des activités athlétiques variées (courses, sauts, lancers).",
-                        "children": []
-                      },
-                      {
-                        "id": "JF5112",
-                        "idParent": "JF511",
-                        "name": "Appliquer des principes simples pour améliorer la performance dans des activités athlétiques et/ ou nautiques.",
-                        "children": []
-                      },
-                      {
-                        "id": "JF5113",
-                        "idParent": "JF511",
-                        "name": "Utiliser sa vitesse pour aller plus loin, ou plus haut.",
-                        "children": []
-                      },
-                      {
-                        "id": "JF5114",
-                        "idParent": "JF511",
-                        "name": "Rester horizontalement et sans appui en équilibre dans l’eau.",
-                        "children": []
-                      },
-                      {
-                        "id": "JF5115",
-                        "idParent": "JF511",
-                        "name": "Pendant la pratique, prendre des repères extérieurs et des repères sur son corps pour contrôler son déplacement et son effort.",
-                        "children": []
-                      },
-                      {
-                        "id": "JF5116",
-                        "idParent": "JF511",
-                        "name": "Utiliser des outils de mesures simples pour évaluer sa performance.",
-                        "children": []
-                      },
-                      {
-                        "id": "JF5117",
-                        "idParent": "JF511",
-                        "name": "Respecter les règles des activités.",
-                        "children": []
-                      },
-                      {
-                        "id": "JF5118",
-                        "idParent": "JF511",
-                        "name": "Passer par les différents rôles sociaux.",
-                        "children": []
-                      }
-                    ]
-                  },
-                  {
-                    "id": "JF512",
-                    "idParent": "JF51",
-                    "name": "Adapter ses déplacements à des environnements variés",
-                    "children": [
-                      {
-                        "id": "JF5121",
-                        "idParent": "JF512",
-                        "name": "Conduire un déplacement sans appréhension et en toute sécurité.",
-                        "children": []
-                      },
-                      {
-                        "id": "JF5122",
-                        "idParent": "JF512",
-                        "name": "Adapter son déplacement aux différents milieux.",
-                        "children": []
-                      },
-                      {
-                        "id": "JF5123",
-                        "idParent": "JF512",
-                        "name": "Tenir compte du milieu et de ses évolutions (vent, eau, végétation etc.).",
-                        "children": []
-                      },
-                      {
-                        "id": "JF5124",
-                        "idParent": "JF512",
-                        "name": "Gérer son effort pour pouvoir revenir au point de départ.",
-                        "children": []
-                      },
-                      {
-                        "id": "JF5125",
-                        "idParent": "JF512",
-                        "name": "Aider l’autre.",
-                        "children": []
-                      }
-                    ]
-                  },
-                  {
-                    "id": "JF513",
-                    "idParent": "JF51",
-                    "name": "S’exprimer devant les autres par une prestation artistique et/ou acrobatique",
-                    "children": [
-                      {
-                        "id": "JF5131",
-                        "idParent": "JF513",
-                        "name": "Utiliser le pouvoir expressif du corps de différentes façons.",
-                        "children": []
-                      },
-                      {
-                        "id": "JF5132",
-                        "idParent": "JF513",
-                        "name": "Enrichir son répertoire d’actions afin de communiquer une intention ou une émotion.",
-                        "children": []
-                      },
-                      {
-                        "id": "JF5133",
-                        "idParent": "JF513",
-                        "name": "S’engager dans des actions artistiques ou acrobatiques destinées à être présentées aux autres en maitrisant les risques et ses émotions.",
-                        "children": []
-                      },
-                      {
-                        "id": "JF5134",
-                        "idParent": "JF513",
-                        "name": "Mobiliser son imaginaire pour créer du sens et de l’émotion, dans des prestations collectives.",
-                        "children": []
-                      }
-                    ]
-                  },
-                  {
-                    "id": "JF514",
-                    "idParent": "JF51",
-                    "name": "Conduire et maitriser un affrontement collectif ou interindividuel",
-                    "children": [
-                      {
-                        "id": "JF5141",
-                        "idParent": "JF514",
-                        "name": "Rechercher le gain de l’affrontement par des choix tactiques simples.",
-                        "children": []
-                      },
-                      {
-                        "id": "JF5142",
-                        "idParent": "JF514",
-                        "name": "Adapter son jeu et ses actions aux adversaires et à ses partenaires.",
-                        "children": []
-                      },
-                      {
-                        "id": "JF5143",
-                        "idParent": "JF514",
-                        "name": "Coordonner des actions motrices simples.",
-                        "children": []
-                      },
-                      {
-                        "id": "JF5144",
-                        "idParent": "JF514",
-                        "name": "Se reconnaitre attaquant / défenseur.",
-                        "children": []
-                      },
-                      {
-                        "id": "JF5145",
-                        "idParent": "JF514",
-                        "name": "Coopérer pour attaquer et défendre.",
-                        "children": []
-                      },
-                      {
-                        "id": "JF5146",
-                        "idParent": "JF514",
-                        "name": "Accepter de tenir des rôles simples d’arbitre et d’observateur.",
-                        "children": []
-                      },
-                      {
-                        "id": "JF5147",
-                        "idParent": "JF514",
-                        "name": "S’informer pour agir.",
-                        "children": []
-                      }
-                    ]
-                  }
-                ]
-              }
+					"children": []
+				  },
+				  {
+					"id": "JF5111",
+					"idParent": "JF51",
+					"name": "Mobiliser ses ressources pour réaliser la meilleure performance possible dans des activités athlétiques variées (courses, sauts, lancers).",
+					"children": []
+				  },
+				  {
+					"id": "JF5112",
+					"idParent": "JF51",
+					"name": "Appliquer des principes simples pour améliorer la performance dans des activités athlétiques et/ ou nautiques.",
+					"children": []
+				  },
+				  {
+					"id": "JF5113",
+					"idParent": "JF51",
+					"name": "Utiliser sa vitesse pour aller plus loin, ou plus haut.",
+					"children": []
+				  },
+				  {
+					"id": "JF5114",
+					"idParent": "JF51",
+					"name": "Rester horizontalement et sans appui en équilibre dans l’eau.",
+					"children": []
+				  },
+				  {
+					"id": "JF5115",
+					"idParent": "JF51",
+					"name": "Pendant la pratique, prendre des repères extérieurs et des repères sur son corps pour contrôler son déplacement et son effort.",
+					"children": []
+				  },
+				  {
+					"id": "JF5116",
+					"idParent": "JF51",
+					"name": "Utiliser des outils de mesures simples pour évaluer sa performance.",
+					"children": []
+				  },
+				  {
+					"id": "JF5117",
+					"idParent": "JF51",
+					"name": "Respecter les règles des activités.",
+					"children": []
+				  },
+				  {
+					"id": "JF5118",
+					"idParent": "JF51",
+					"name": "Passer par les différents rôles sociaux.",
+					"children": []
+				  }
+				]
+			  },
+			  {
+				"id": "JF512",
+				"idParent": "JF5",
+				"name": "Adapter ses déplacements à des environnements variés",
+				"children": [
+				  {
+					"id": "JF5121",
+					"idParent": "JF512",
+					"name": "Conduire un déplacement sans appréhension et en toute sécurité.",
+					"children": []
+				  },
+				  {
+					"id": "JF5122",
+					"idParent": "JF512",
+					"name": "Adapter son déplacement aux différents milieux.",
+					"children": []
+				  },
+				  {
+					"id": "JF5123",
+					"idParent": "JF512",
+					"name": "Tenir compte du milieu et de ses évolutions (vent, eau, végétation etc.).",
+					"children": []
+				  },
+				  {
+					"id": "JF5124",
+					"idParent": "JF512",
+					"name": "Gérer son effort pour pouvoir revenir au point de départ.",
+					"children": []
+				  },
+				  {
+					"id": "JF5125",
+					"idParent": "JF512",
+					"name": "Aider l’autre.",
+					"children": []
+				  }
+				]
+			  },
+			  {
+				"id": "JF513",
+				"idParent": "JF5",
+				"name": "S’exprimer devant les autres par une prestation artistique et/ou acrobatique",
+				"children": [
+				  {
+					"id": "JF5131",
+					"idParent": "JF513",
+					"name": "Utiliser le pouvoir expressif du corps de différentes façons.",
+					"children": []
+				  },
+				  {
+					"id": "JF5132",
+					"idParent": "JF513",
+					"name": "Enrichir son répertoire d’actions afin de communiquer une intention ou une émotion.",
+					"children": []
+				  },
+				  {
+					"id": "JF5133",
+					"idParent": "JF513",
+					"name": "S’engager dans des actions artistiques ou acrobatiques destinées à être présentées aux autres en maitrisant les risques et ses émotions.",
+					"children": []
+				  },
+				  {
+					"id": "JF5134",
+					"idParent": "JF513",
+					"name": "Mobiliser son imaginaire pour créer du sens et de l’émotion, dans des prestations collectives.",
+					"children": []
+				  }
+				]
+			  },
+			  {
+				"id": "JF514",
+				"idParent": "JF5",
+				"name": "Conduire et maitriser un affrontement collectif ou interindividuel",
+				"children": [
+				  {
+					"id": "JF5141",
+					"idParent": "JF514",
+					"name": "Rechercher le gain de l’affrontement par des choix tactiques simples.",
+					"children": []
+				  },
+				  {
+					"id": "JF5142",
+					"idParent": "JF514",
+					"name": "Adapter son jeu et ses actions aux adversaires et à ses partenaires.",
+					"children": []
+				  },
+				  {
+					"id": "JF5143",
+					"idParent": "JF514",
+					"name": "Coordonner des actions motrices simples.",
+					"children": []
+				  },
+				  {
+					"id": "JF5144",
+					"idParent": "JF514",
+					"name": "Se reconnaitre attaquant / défenseur.",
+					"children": []
+				  },
+				  {
+					"id": "JF5145",
+					"idParent": "JF514",
+					"name": "Coopérer pour attaquer et défendre.",
+					"children": []
+				  },
+				  {
+					"id": "JF5146",
+					"idParent": "JF514",
+					"name": "Accepter de tenir des rôles simples d’arbitre et d’observateur.",
+					"children": []
+				  },
+				  {
+					"id": "JF5147",
+					"idParent": "JF514",
+					"name": "S’informer pour agir.",
+					"children": []
+				  }
+				]
+			  }
             ]
           },
           {
