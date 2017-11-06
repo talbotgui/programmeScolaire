@@ -1,53 +1,18 @@
-let path = require('path');
+// Protractor configuration file, see link for more information
+// https://github.com/angular/protractor/blob/master/lib/config.ts
+const { SpecReporter } = require('jasmine-spec-reporter');
 
-// @see http://karma-runner.github.io/1.0/config/configuration-file.html
-// Pour lancer les tests : ng test
-// Pour lancer les tests avec couverture de code : ng test --code-coverage --reporters=coverage-istanbul,junit
-module.exports = function (config) {
-	config.set({
-		// Répertoire de base permettant la résolution des chemins
-		basePath: '',
-		// Liste des frameworks de test à utiliser
-		frameworks: ['jasmine', '@angular/cli'],
-		// Liste des plugins à charger
-		plugins: [
-			require('karma-jasmine'),
-			require('karma-coverage'),
-			require('karma-phantomjs-launcher'),
-			require('karma-jasmine-html-reporter'),
-			require('karma-junit-reporter'),
-			require('karma-coverage-istanbul-reporter'),
-			require('@angular/cli/plugins/karma')
-		],
-		// Nécessaire pour l'exécution des tests Jasmine
-		client: { clearContext: false },
-		// Liste des rapporteurs à déclencher
-		reporters: ['progress', 'kjhtml', 'junit'],
-		// Port utilisé par Karma
-		port: 9876,
-		// Couleurs dans les logs
-		colors: false,
-		// Niveau de log
-		logLevel: config.LOG_INFO,
-		// Active la surveillance des fichiers et la ré-exécution des tests en cas de modification
-		autoWatch: true,
-		// Execution unique des tests
-		singleRun: true,
-		// Le(s) browser(s) à utiliser pour les tests
-		browsers: ['PhantomJS'],
-		// Configuration pour Istanbul
-		coverageIstanbulReporter: {
-			// Types des rapports
-			reports: ['html', 'lcovonly'],
-			// Répertoire de sortie
-			dir: path.join(__dirname, 'build/coverage/'),
-			// if using webpack and pre-loaders, work around webpack breaking the source path
-			//fixWebpackSourcePaths: true,
-			//skipFilesWithNoCoverage: false
-		},
-		// Configuration pour Angular : mode dev
-		angularCli: { environment: 'dev' },
-		// Configuration pour le junit reporter
-		junitReporter: { outputDir: './build/', outputFile: 'test-results.xml', useBrowserName: false, xmlVersion: '1' }
-	});
+exports.config = {
+	allScriptsTimeout: 11000,
+	specs: ['./e2e/**/*.e2e-spec.ts'],
+	// https://github.com/angular/protractor/blob/master/docs/browser-setup.md
+	capabilities: { 'browserName': 'chrome', chromeOptions: { args: [ "--headless", "--disable-gpu", "--window-size=800x600" ] } },
+	directConnect: true,
+	baseUrl: 'http://localhost:4200/',
+	framework: 'jasmine',
+	jasmineNodeOpts: { showColors: true, defaultTimeoutInterval: 30000, print: function () { } },
+	onPrepare() {
+		require('ts-node').register({ project: 'e2e/tsconfig.e2e.json' });
+		jasmine.getEnv().addReporter(new SpecReporter({ spec: { displayStacktrace: true } }));
+	}
 };
