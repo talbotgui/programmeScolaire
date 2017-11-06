@@ -5,7 +5,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 
 import * as model from '../model/model';
 import { DataRepository } from '../service/data.repository';
-import { RechecheService } from '../service/recherche.service';
+import { RechercheService } from '../service/recherche.service';
 
 @Component({ selector: 'tab-competence', templateUrl: './tab-competence.component.html', styleUrls: ['./tab-competence.component.css'] })
 export class TabCompetenceComponent {
@@ -38,7 +38,7 @@ export class TabCompetenceComponent {
   private tree: TreeComponent;
 
   // Un constructeur pour se faire injecter les dépendances
-  constructor(private rechercheService: RechecheService, private dataRepository: DataRepository, private snackBar: MdSnackBar) { }
+  constructor(private rechercheService: RechercheService, private dataRepository: DataRepository, private snackBar: MdSnackBar) { }
 
   recherche(): void {
     if (this.motsDuFiltre && this.motsDuFiltre[0].length > 3) {
