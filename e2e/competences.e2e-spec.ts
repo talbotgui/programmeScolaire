@@ -22,7 +22,19 @@ describe('Onglet des compétences', () => {
     //
     page.click(selectors.APP.MENU_COMPETENCES);
     //
-    expect(page.isVisible(selectors.TabCompetences.INPUT_FILTRE)).toBeTruthy();
+    expect(page.isVisible(selectors.TabCompetences.CHECKBOX_CHARGEMENT_DONNEES[0])).toBeTruthy();
+    expect(page.isVisible(selectors.TabCompetences.CHECKBOX_CHARGEMENT_DONNEES[1])).toBeTruthy();
+    expect(page.isVisible(selectors.TabCompetences.CHECKBOX_CHARGEMENT_DONNEES[2])).toBeTruthy();
+  });
+
+  it('Chargement des données de la premiere periode', () => {
+    //
+    page.click(selectors.APP.MENU_COMPETENCES);
+    //
+    page.click(selectors.TabCompetences.CHECKBOX_CHARGEMENT_DONNEES[0]);
+    page.click(selectors.TabCompetences.CHECKBOX_CHARGEMENT_DONNEES[1]);
+    page.click(selectors.TabCompetences.CHECKBOX_CHARGEMENT_DONNEES[2]);
+    //
     expect(page.isVisible(selectors.TabCompetences.TREE_ROOT)).toBeTruthy();
     expect(page.compterElements(selectors.TabCompetences.TREE_NODES)).toBe(2);
   });
@@ -31,9 +43,10 @@ describe('Onglet des compétences', () => {
   it('Présence de toutes les compétences sur les premiers niveaux', () => {
     //
     page.click(selectors.APP.MENU_COMPETENCES);
+    page.click(selectors.TabCompetences.CHECKBOX_CHARGEMENT_DONNEES[0]);
+    page.click(selectors.TabCompetences.CHECKBOX_CHARGEMENT_DONNEES[1]);
+    page.click(selectors.TabCompetences.CHECKBOX_CHARGEMENT_DONNEES[2]);
     //
-    page.clickAll(selectors.TabCompetences.TREE_NODE_COLLAPSED);
-    page.clickAll(selectors.TabCompetences.TREE_NODE_COLLAPSED);
     page.clickAll(selectors.TabCompetences.TREE_NODE_COLLAPSED);
     //
     expect(page.compterElements(selectors.TabCompetences.TREE_NODES)).toBe(307);

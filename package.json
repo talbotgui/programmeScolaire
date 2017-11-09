@@ -13,7 +13,8 @@
     "quality": "node node_modules/sonar-scanner/ -Dproject.settings=./sonar-programmeScolaire.properties",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "e2e-ic": "ng e2e --config=protractor-ic.conf.js"
+    "e2e-ic": "ng e2e --config=protractor-ic.conf.js",
+    "debug-e2e": "ng e2e --specs=e2e/competences.e2e-spec.ts --serve=false"
   },
   "private": true,
   "dependencies": {

@@ -10,6 +10,11 @@ export class APP {
 }
 
 export class TabCompetences {
+  static CHECKBOX_CHARGEMENT_DONNEES = [
+    by.xpath('//input[@type="checkbox"][1]'),
+    by.xpath('//input[@type="checkbox"][2]'),
+    by.xpath('//input[@type="checkbox"][3]')
+  ];
   static INPUT_FILTRE = by.xpath('//tab-competence/fieldset/input');
   static TREE_ROOT = by.xpath('//tree-root');
   static TREE_NODES = by.css('span.toggle-children');
