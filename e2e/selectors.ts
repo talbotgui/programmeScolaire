@@ -11,9 +11,9 @@ export class APP {
 
 export class TabCompetences {
   static CHECKBOX_CHARGEMENT_DONNEES = [
-    by.xpath('//input[@type="checkbox"][1]'),
-    by.xpath('//input[@type="checkbox"][2]'),
-    by.xpath('//input[@type="checkbox"][3]')
+    by.xpath('(//span[@class="mat-checkbox-label"])[1]'),
+    by.xpath('(//span[@class="mat-checkbox-label"])[2]'),
+    by.xpath('(//span[@class="mat-checkbox-label"])[3]'),
   ];
   static INPUT_FILTRE = by.xpath('//tab-competence/fieldset/input');
   static TREE_ROOT = by.xpath('//tree-root');

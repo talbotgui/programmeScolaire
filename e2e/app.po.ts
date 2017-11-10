@@ -1,8 +1,8 @@
-import { browser, by, element, WebElement } from 'protractor';
+import { browser, by, element, WebElement, protractor } from 'protractor';
 import { By, FileDetector, promise as wdpromise } from 'selenium-webdriver';
 import * as fs from 'fs';
 
-export class BulletinPage {
+export class ProgrammeScolairePage {
   private identifiant: string;
   constructor() {
     this.identifiant = '' + (new Date()).getTime();
@@ -10,9 +10,13 @@ export class BulletinPage {
 
   navigateToRoot(): void {
     browser.get('/?offline&?sansAlerte');
+    browser.driver.manage().window().maximize();
   }
   getText(selector: By) {
     return element(selector).getText();
+  }
+  getValue(selector: By) {
+    return element(selector).getAttribute('value');
   }
   click(selector: By): void {
     element(selector).click();
@@ -23,13 +27,21 @@ export class BulletinPage {
   isVisible(selector: By) {
     return element(selector).isPresent();
   }
-  type(selector: By, text: string): void {
+  type(selector: By, text: string, key?: string): void {
     const e = element(selector);
     e.clear();
-    e.sendKeys(text);
+    if (key) {
+      e.sendKeys(text, key);
+    } else {
+      e.sendKeys(text);
+    }
   }
-  patiente(temps: number) {
-    browser.driver.sleep(temps);
+  patiente(temps?: number) {
+    if (temps) {
+      browser.driver.sleep(temps);
+    } else {
+      browser.waitForAngular();
+    }
   }
   compterElements(selector: By): wdpromise.Promise<number> {
     return element.all(selector).count();
@@ -49,5 +61,17 @@ export class BulletinPage {
       stream.write(new Buffer(png, 'base64'));
       stream.end();
     });
+  }
+  /**
+   * Sélectionne une option d'un selectBox
+   * @param selectorDuSelect Selecteur du select
+   * @param optionValues Liste d'options (ré-évaluation du select entre chaque option)
+   */
+  select(selectorDuSelect: By, ...optionValues: string[]): void {
+    for (const optionValue of optionValues) {
+      element(selectorDuSelect).click();
+      browser.waitForAngular();
+      element(By.xpath('//option[@value="' + optionValue + '"]')).click();
+    }
   }
 }

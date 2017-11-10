@@ -1,4 +1,5 @@
-import { BulletinPage } from './app.po';
+import { protractor } from 'protractor';
+import { ProgrammeScolairePage } from './app.po';
 import * as selectors from './selectors';
 import * as path from 'path';
 
@@ -9,11 +10,11 @@ import * as path from 'path';
  * Pour démarrer le test en DEBUG avec VSCode, il faut lancer "ng serve" depuis un terminal puis ouvrir le script xx.e2e-spec.ts et taper F5
  */
 describe('Onglet des compétences', () => {
-  let page: BulletinPage;
+  let page: ProgrammeScolairePage;
 
   beforeEach(() => {
     // Accès à l'application
-    page = new BulletinPage();
+    page = new ProgrammeScolairePage();
     page.navigateToRoot();
   });
 
@@ -36,10 +37,9 @@ describe('Onglet des compétences', () => {
     page.click(selectors.TabCompetences.CHECKBOX_CHARGEMENT_DONNEES[2]);
     //
     expect(page.isVisible(selectors.TabCompetences.TREE_ROOT)).toBeTruthy();
-    expect(page.compterElements(selectors.TabCompetences.TREE_NODES)).toBe(2);
+    expect(page.compterElements(selectors.TabCompetences.TREE_NODES)).toBe(3);
   });
 
-  // Pas plus à cause du timeout
   it('Présence de toutes les compétences sur les premiers niveaux', () => {
     //
     page.click(selectors.APP.MENU_COMPETENCES);
@@ -48,20 +48,24 @@ describe('Onglet des compétences', () => {
     page.click(selectors.TabCompetences.CHECKBOX_CHARGEMENT_DONNEES[2]);
     //
     page.clickAll(selectors.TabCompetences.TREE_NODE_COLLAPSED);
+    page.clickAll(selectors.TabCompetences.TREE_NODE_COLLAPSED);
     //
-    expect(page.compterElements(selectors.TabCompetences.TREE_NODES)).toBe(307);
-    expect(page.compterElements(selectors.TabCompetences.TREE_NODE_EXPANDED)).toBe(64);
-    expect(page.compterElements(selectors.TabCompetences.TREE_NODE_COLLAPSED)).toBe(243);
+    expect(page.compterElements(selectors.TabCompetences.TREE_NODE_EXPANDED)).toBe(9);
+    expect(page.compterElements(selectors.TabCompetences.TREE_NODES)).toBe(52);
+    expect(page.compterElements(selectors.TabCompetences.TREE_NODE_COLLAPSED)).toBe(43);
   });
 
   it('Test du filtre', () => {
     //
     page.click(selectors.APP.MENU_COMPETENCES);
+    page.click(selectors.TabCompetences.CHECKBOX_CHARGEMENT_DONNEES[0]);
+    page.click(selectors.TabCompetences.CHECKBOX_CHARGEMENT_DONNEES[1]);
+    page.click(selectors.TabCompetences.CHECKBOX_CHARGEMENT_DONNEES[2]);
     //
-    page.type(selectors.TabCompetences.INPUT_FILTRE, 'Français');
-    page.click(selectors.APP.MENU_COMPETENCES);
+    page.type(selectors.TabCompetences.INPUT_FILTRE, 'Français', protractor.Key.TAB);
     //
+    expect(page.compterElements(selectors.TabCompetences.TREE_NODE_EXPANDED)).toBe(40);
+    expect(page.compterElements(selectors.TabCompetences.TREE_NODES)).toBe(49);
     expect(page.compterElements(selectors.TabCompetences.TREE_NODE_COLLAPSED)).toBe(9);
-    expect(page.compterElements(selectors.TabCompetences.TREE_NODE_EXPANDED)).toBe(37);
   });
 });
