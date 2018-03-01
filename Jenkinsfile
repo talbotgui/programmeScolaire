@@ -13,9 +13,6 @@ pipeline {
 			agent any
 			steps {
 				checkout scm
-				script {
-					stash name: 'sources', includes: '*'
-				}
 			}
 		}
 
@@ -24,16 +21,12 @@ pipeline {
 			steps {
 				sh "npm install --no-optional"
 				sh "npm run build-prod"
-				stash name:'modules', includes: 'node_modules/**'
-				stash name:'binaires', includes: 'dist/**'
 			}
 		}
 
 		stage ('Unit test') {
 			agent any
 			steps {
-				unstash 'sources'
-				unstash 'modules'
 				sh "npm run test-ic"
 			}
 		}
@@ -41,8 +34,6 @@ pipeline {
 		stage ('Integration test') {
 			agent any
 			steps {
-				unstash 'sources'
-				unstash 'modules'
 				sh "npm run e2e-ic"
 			}
 		}
@@ -50,7 +41,6 @@ pipeline {
 		stage ('Quality') {
 			agent any
 			steps {
-				unstash 'sources'
 				withCredentials([string(credentialsId: 'sonarSecretKey', variable: 'SONAR_KEY')]) {
 					sh "sed -i 's/XXXXXXXXX/${SONAR_KEY}/' ./sonar-programmeScolaire.properties"
 					sh "npm run quality"
@@ -81,7 +71,6 @@ pipeline {
 							if (userInput) {
 								node {
 									currentBuild.displayName = currentBuild.displayName + " - deployed to production"
-									unstash 'binaires'
 									sh "sed -i 's/\"\\/\"/\"\\/programmeScolaire\\/\"/' ./dist/index.html"
 									sh "mv ./dist/index.html ./dist/indexArenommer.html"
 									sh 'echo "Déploiement de la nouvelle version en cours" > /var/www/html/programmeScolaire/index.html'
@@ -93,11 +82,11 @@ pipeline {
 						}
 					} catch(err) {
 						long timePassed = System.currentTimeMillis() - startTime
-                        if (timePassed >= 1 * 1000 * 3600 * 24) {
-                            echo 'Timed out du passage en production'
-                        } else {
-                            throw err
-                        }
+						if (timePassed >= 1 * 1000 * 3600 * 24) {
+            	echo 'Timed out du passage en production'
+            } else {
+            	throw err
+            }
 					}
 				}
 			}
