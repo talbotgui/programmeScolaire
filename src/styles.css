@@ -2,3 +2,7 @@
 
 /* global */
 body { background-color:lightgray; font:12px/18px Arial,sans-serif; background-image: none; }
+
+/** Integration de bootstrap */
+fieldset { padding: 5px!important; border-width: 2px!important; border-style: groove!important; border-color: threedface!important; border-image: initial!important; }
+legend { width: auto!important; font-size: 1rem!important;}
